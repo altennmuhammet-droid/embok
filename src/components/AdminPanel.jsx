@@ -23,9 +23,11 @@ export default function AdminPanel({ currentUser }) {
   // Local state for editing scores
   const [editScores, setEditScores] = useState({});
 
+  const encode = (s) => btoa(unescape(encodeURIComponent(s)));
+
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'altanın.orospuları') {
+    if (encode(password) === 'YWx0YW7EsW4ub3Jvc3B1bGFyxLE=') {
       setIsAuthenticated(true);
       setError('');
       

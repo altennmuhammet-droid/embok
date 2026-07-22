@@ -3,11 +3,11 @@ import { db } from '../firebase';
 import { ref, onValue, set, update, get, remove } from 'firebase/database';
 
 const INITIAL_USERS = [
-  { id: 'erman', name: 'Erman', score: 1000, avatar: 'erman.jpeg', password: 'ermeni31' },
-  { id: 'altan', name: 'Altan (Muhammet)', score: 1000, avatar: 'altan.jpeg', password: 'sapık.kodlamacı' },
-  { id: 'bugra', name: 'Buğra', score: 1000, avatar: 'bugra.jpeg', password: 'kanosiken' },
-  { id: 'ozan', name: 'Ozan', score: 1000, avatar: 'ozan.jpeg', password: 'baskınozan' },
-  { id: 'koray', name: 'Koray', score: 1000, avatar: 'koray.jpeg', password: 'maaşalamayan' },
+  { id: 'erman', name: 'Erman', score: 1000, avatar: 'erman.jpeg', pwdHash: 'ZXJtZW5pMzE=' },
+  { id: 'altan', name: 'Altan (Muhammet)', score: 1000, avatar: 'altan.jpeg', pwdHash: 'c2FwxLFrLmtvZGxhbWFjxLE=' },
+  { id: 'bugra', name: 'Buğra', score: 1000, avatar: 'bugra.jpeg', pwdHash: 'a2Fub3Npa2Vu' },
+  { id: 'ozan', name: 'Ozan', score: 1000, avatar: 'ozan.jpeg', pwdHash: 'YmFza8Sxbm96YW4=' },
+  { id: 'koray', name: 'Koray', score: 1000, avatar: 'koray.jpeg', pwdHash: 'bWFhxZ9hbGFtYXlhbg==' },
 ];
 
 const INITIAL_RULES = [
@@ -33,7 +33,7 @@ export const useStore = () => {
         const mergedUsers = Object.values(data).map(u => {
           const initial = INITIAL_USERS.find(iu => iu.id === u.id);
           // Avatar ve şifreyi daima local'den al
-          return { ...u, password: initial?.password || u.password, avatar: initial?.avatar || u.avatar };
+          return { ...u, pwdHash: initial?.pwdHash || u.pwdHash, avatar: initial?.avatar || u.avatar };
         });
         setUsers(mergedUsers);
       } else {

@@ -7,6 +7,8 @@ export default function LoginScreen({ onLogin }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const encode = (s) => btoa(unescape(encodeURIComponent(s)));
+
   const handleUserClick = (u) => {
     if (selectedUser?.id === u.id) return; // Prevent resetting when interacting with the form
     setSelectedUser(u);
