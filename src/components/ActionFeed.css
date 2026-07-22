@@ -1,0 +1,40 @@
+.win95-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.win95-list-item {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-bottom: 1px dotted var(--w95-border-mid);
+  cursor: default;
+}
+
+.win95-list-item:hover {
+  background-color: var(--w95-blue);
+  color: white;
+}
+
+.win95-list-item:hover .text-red {
+  color: #ff8080;
+}
+
+.win95-list-item:hover .text-green {
+  color: #80ff80;
+}
+
+.win95-list-item .icon {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.win95-list-item .details {
+  flex-grow: 1;
+}
+
+.win95-list-item .points {
+  font-weight: bold;
+  padding-left: 10px;
+}

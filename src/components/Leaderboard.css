@@ -1,0 +1,42 @@
+.win95-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.win95-table th {
+  background-color: var(--w95-gray);
+  border-right: 1px solid var(--w95-border-dark);
+  border-bottom: 1px solid var(--w95-border-dark);
+  box-shadow: inset -1px -1px var(--w95-border-mid), inset 1px 1px var(--w95-border-light);
+  padding: 4px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.win95-table td {
+  padding: 6px;
+  border-bottom: 1px dotted var(--w95-border-mid);
+}
+
+.win95-table tr:hover {
+  background-color: var(--w95-blue);
+  color: white;
+}
+
+.win95-table tr:hover .text-red {
+  color: #ff8080;
+}
+
+.win95-table tr:hover .text-green {
+  color: #80ff80;
+}
+
+.row-selected {
+  background-color: var(--w95-blue);
+  color: white;
+}
+
+.row-selected .text-green {
+  color: #80ff80;
+}
